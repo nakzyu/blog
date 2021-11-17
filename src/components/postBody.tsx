@@ -4,7 +4,6 @@ import ReactMarkdown from "react-markdown";
 
 const PostBody: React.FC<PostType> = ({ data, content }): JSX.Element => {
   const [text] = useState(content);
-  return <ReactMarkdown>{text}</ReactMarkdown>;
+  return <ReactMarkdown className='markdown-body'>{text}</ReactMarkdown>;
 };
-
 export default PostBody;

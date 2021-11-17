@@ -2,11 +2,16 @@
 title: How To Run AB Tests In React
 description: 4 options I came across
 publishedDate: 2021/02/14
+category: 개발
 tags:
   - react
   - ab testing
 ---
 
-## Heelo World
+# Heelo World
 
 재밌냐?
+
+```js
+const x = () => {};
+```

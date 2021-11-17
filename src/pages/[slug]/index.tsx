@@ -1,5 +1,6 @@
 import { GetStaticPropsContext, NextPage } from "next";
 import PostType from "../../../public/types/postType";
+import Header from "../../components/header";
 import PostBody from "../../components/postBody";
 import PostHead from "../../components/postHead";
 import { getPaths, getPost } from "../../utils/postHandler";
@@ -7,6 +8,7 @@ import { getPaths, getPost } from "../../utils/postHandler";
 const PostPage: NextPage<PostType> = ({ data, content }) => {
   return (
     <>
+      <Header />
       <PostHead data={data} content={content} />
       <PostBody data={data} content={content} />;
     </>
