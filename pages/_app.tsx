@@ -2,7 +2,11 @@ import type { AppProps } from "next/app";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <div className='container m-auto'>
+      <Component {...pageProps} />;
+    </div>
+  );
 }
 
 export default MyApp;

@@ -1,31 +1,36 @@
-import { GetStaticPropsContext, NextPage } from "next";
-import { Post } from "../../../types/post";
-import Header from "../../../components/header";
+import { GetStaticPaths, GetStaticPropsContext } from "next";
 import PostBody from "../../../components/post/postBody";
 import PostHead from "../../../components/post/postHead";
-import { getPaths, getPost } from "../../../utils/postHandler";
+import { Post } from "../../../types/post";
+import { getAllPostsByCategory, getPaths } from "../../../utils/postHandler";
 
-const PostPage: NextPage<Post> = ({ data, content }) => {
-  return (
-    <>
-      <Header />
-      <PostHead data={data} content={content} />
-      <PostBody data={data} content={content} />;
-    </>
-  );
+type PostPageProps = {
+  posts: Post[];
 };
 
-export const getStaticPaths = () => {
+const PostPage = ({ posts }: PostPageProps) => {
+  const results = posts.map(({ data, content }) => (
+    <li key={data.title}>
+      <PostHead data={data} content={content} />
+      <PostBody data={data} content={content} />
+    </li>
+  ));
+  return <ul className='list-none'>{results}</ul>;
+};
+
+export const getStaticPaths: GetStaticPaths = () => {
   const paths = getPaths();
   return { paths, fallback: false };
 };
 
 interface StaticProps extends GetStaticPropsContext {
-  params: Record<string, string>;
+  params: { category: string };
 }
 
 export const getStaticProps = ({ params }: StaticProps) => {
-  console.log(params);
+  const posts = getAllPostsByCategory(params.category);
+  console.log(posts);
+  return { props: { posts } };
 };
 
 export default PostPage;
