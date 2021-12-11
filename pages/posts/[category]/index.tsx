@@ -1,11 +1,11 @@
 import { GetStaticPropsContext, NextPage } from "next";
-import PostType from "../../../public/types/postType";
-import Header from "../../components/header";
-import PostBody from "../../components/postBody";
-import PostHead from "../../components/postHead";
-import { getPaths, getPost } from "../../utils/postHandler";
+import { Post } from "../../../types/post";
+import Header from "../../../components/header";
+import PostBody from "../../../components/post/postBody";
+import PostHead from "../../../components/post/postHead";
+import { getPaths, getPost } from "../../../utils/postHandler";
 
-const PostPage: NextPage<PostType> = ({ data, content }) => {
+const PostPage: NextPage<Post> = ({ data, content }) => {
   return (
     <>
       <Header />
@@ -25,10 +25,7 @@ interface StaticProps extends GetStaticPropsContext {
 }
 
 export const getStaticProps = ({ params }: StaticProps) => {
-  const file = getPost(params.slug);
-  return {
-    props: file,
-  };
+  console.log(params);
 };
 
 export default PostPage;
