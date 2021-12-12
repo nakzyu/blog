@@ -1,15 +1,15 @@
 import fs, { readFileSync } from "fs";
 import path from "path";
-import { Post, PostMetadata } from "../types/post";
+import { Post } from "../types/post";
 import matter from "gray-matter";
 
 const root = process.cwd();
 const postsDir = path.join(root + "/posts/");
 
-const getAllPosts = (dir: string) =>
+export const getAllPosts = () =>
   fs
-    .readdirSync(dir)
-    .map((fileName) => matter(readFileSync(dir + fileName, "utf-8")))
+    .readdirSync(postsDir)
+    .map((fileName) => matter(readFileSync(postsDir + fileName, "utf-8")))
     .map(
       (post) =>
         ({
@@ -18,19 +18,22 @@ const getAllPosts = (dir: string) =>
         } as Post)
     );
 
-export const getPaths = () => {
+export const getAllPathsOfCategories = () => {
   const categorySet = new Set<string>();
-  getAllPosts(postsDir).forEach((post) =>
-    categorySet.add((post.data as PostMetadata).category)
-  );
+  getAllPosts().forEach((post) => categorySet.add(post.data.category));
   const categoryPaths = Array.from(categorySet).map((category) => ({
     params: { category },
   }));
   return categoryPaths;
 };
 
+export const getAllPathsOfPosts = () =>
+  getAllPosts().map(({ data }) => ({
+    params: { category: data.category, post: data.title },
+  }));
+
 export const getAllPostsByCategory = (category: string) =>
-  getAllPosts(postsDir).filter(({ data }) => data.category === category);
+  getAllPosts().filter(({ data }) => data.category === category);
 
 export const getPost = (title: string) =>
-  getAllPosts(postsDir).find(({ data }) => title === data.title);
+  getAllPosts().find(({ data }) => title === data.title);

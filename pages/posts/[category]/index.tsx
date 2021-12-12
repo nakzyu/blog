@@ -1,25 +1,21 @@
 import { GetStaticPaths, GetStaticPropsContext } from "next";
-import PostBody from "../../../components/post/postBody";
-import PostHead from "../../../components/post/postHead";
 import { Post } from "../../../types/post";
-import { getAllPostsByCategory, getPaths } from "../../../utils/postHandler";
+import {
+  getAllPostsByCategory,
+  getAllPathsOfCategories,
+} from "../../../utils/postHandler";
+import PostList from "../../../components/post/postList";
 
-type PostPageProps = {
+type AllPostsPageProps = {
   posts: Post[];
 };
 
-const PostPage = ({ posts }: PostPageProps) => {
-  const results = posts.map(({ data, content }) => (
-    <li key={data.title}>
-      <PostHead data={data} content={content} />
-      <PostBody data={data} content={content} />
-    </li>
-  ));
-  return <ul className='list-none'>{results}</ul>;
+const AllPostsPage = ({ posts }: AllPostsPageProps) => {
+  return <PostList posts={posts} />;
 };
 
 export const getStaticPaths: GetStaticPaths = () => {
-  const paths = getPaths();
+  const paths = getAllPathsOfCategories();
   return { paths, fallback: false };
 };
 
@@ -29,8 +25,7 @@ interface StaticProps extends GetStaticPropsContext {
 
 export const getStaticProps = ({ params }: StaticProps) => {
   const posts = getAllPostsByCategory(params.category);
-  console.log(posts);
   return { props: { posts } };
 };
 
-export default PostPage;
+export default AllPostsPage;
