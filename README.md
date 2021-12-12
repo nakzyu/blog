@@ -1,6 +1,4 @@
-pages
-
-directory structures
+routes
 
 - /about - about me
 
