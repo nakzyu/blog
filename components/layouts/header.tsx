@@ -9,7 +9,7 @@ const Header = () => {
         <Link href='/about' passHref>
           <div>about me</div>
         </Link>
-        <Link href='/posts' passHref>
+        <Link href='/category/all' passHref>
           <div>posts</div>
         </Link>
       </div>

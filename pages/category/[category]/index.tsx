@@ -6,11 +6,11 @@ import {
 } from "../../../utils/postHandler";
 import PostList from "../../../components/post/postList";
 
-type AllPostsPageProps = {
+type PostsByCategoryPageProps = {
   posts: Post[];
 };
 
-const AllPostsPage = ({ posts }: AllPostsPageProps) => {
+const PostsByCategoryPage = ({ posts }: PostsByCategoryPageProps) => {
   return <PostList posts={posts} />;
 };
 
@@ -28,4 +28,4 @@ export const getStaticProps = ({ params }: StaticProps) => {
   return { props: { posts } };
 };
 
-export default AllPostsPage;
+export default PostsByCategoryPage;

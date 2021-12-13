@@ -29,7 +29,7 @@ export const getAllPathsOfCategories = () => {
 
 export const getAllPathsOfPosts = () =>
   getAllPosts().map(({ data }) => ({
-    params: { category: data.category, post: data.title },
+    params: { post: data.title },
   }));
 
 export const getAllPostsByCategory = (category: string) =>
