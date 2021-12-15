@@ -1,9 +1,9 @@
 import { GetStaticPropsContext } from "next";
-import PostBody from "../../../components/post/postBody";
-import PostHead from "../../../components/post/postHead";
-import { Post } from "../../../types/post";
-import SetHead from "../../../utils/ApplyHead";
-import { getAllPathsOfPosts, getPost } from "../../../utils/postHandler";
+import PostBody from "../../components/post/postBody";
+import PostHead from "../../components/post/postHead";
+import { Post } from "../../types/post";
+import SetHead from "../../utils/ApplyHead";
+import { getAllPathsOfPosts, getPost } from "../../utils/postHandler";
 
 type PostPageProps = {
   post: Post;

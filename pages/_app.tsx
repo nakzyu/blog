@@ -5,15 +5,21 @@ import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <div className='mx-1 sm:mx-4 lg:mx-16 flex-col'>
-      <div className='max-w-4xl m-auto sm:max-h-16  lg:max-h-28'>
-        <Header />
+    <div className='flex-col'>
+      <div className='w-full border-b border-b-neutral-200'>
+        <div className='max-w-4xl m-auto sm:max-h-16 lg:max-h-28'>
+          <Header />
+        </div>
       </div>
-      <div className='max-w-2xl m-auto'>
-        <Component className='' {...pageProps} />
+      <div className='w-full'>
+        <div className='max-w-2xl m-auto'>
+          <Component {...pageProps} />
+        </div>
       </div>
-      <div className='max-w-4xl m-auto sm:max-h-16  lg:max-h-28'>
-        <Footer />
+      <div className='w-full bg-neutral-900 text-white'>
+        <div className='max-w-4xl m-auto sm:max-h-16 lg:max-h-28'>
+          <Footer />
+        </div>
       </div>
     </div>
   );

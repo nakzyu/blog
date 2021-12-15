@@ -9,7 +9,7 @@ type PostListProps = {
 const PostList = ({ posts }: PostListProps) => (
   <div className='list-none'>
     {posts.map(({ data }) => (
-      <Link href={`/post/${data.title}`} passHref key={data.title}>
+      <Link href={`/${data.title}`} passHref key={data.title}>
         <div>
           <PostCard data={data} />
         </div>

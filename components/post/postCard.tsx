@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import { PostMetadata } from "../../types/post";
 
 type PostCardProps = {
@@ -8,10 +8,10 @@ type PostCardProps = {
 const PostCard = ({ data }: PostCardProps) => {
   return (
     <>
-      <Image src='/images/profile.jpg' alt='image' width='100' height='100' />
-      <h3>{data.title}</h3>
-      <p>{data.description}</p>
-      <div>{data.publishedDate}</div>
+      <img className='cursor-pointer' src='/images/profile.jpg' alt='image' />
+      <h3 className='cursor-pointer'>{data.title}</h3>
+      <p className='cursor-pointer'>{data.description}</p>
+      <div className='cursor-pointer'>{data.publishedDate}</div>
     </>
   );
 };
