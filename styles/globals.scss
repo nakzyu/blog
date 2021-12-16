@@ -2,6 +2,10 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+body {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
 /*
 Copyright (c) 2017 Chris Patuzzo
 https://twitter.com/chrispatuzzo
@@ -24,7 +28,7 @@ SOFTWARE.
 
 .reactMarkDown {
   body {
-    font-family: Helvetica, arial, sans-serif;
+    font-family: "Noto Sans KR", Helvetica, arial, sans-serif;
     font-size: 14px;
     line-height: 1.6;
     padding-top: 10px;
