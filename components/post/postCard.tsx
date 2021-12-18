@@ -7,8 +7,12 @@ type PostCardProps = {
 
 const PostCard = ({ data }: PostCardProps) => {
   return (
-    <>
-      <img className='cursor-pointer' src='/images/profile.jpg' alt='image' />
+    <div className='mt-4 md:mt-6'>
+      <img
+        className='cursor-pointer object-cover w-full h-64 md:h-96 '
+        src={`/images/${data.thumbnail || "profile.jpg"}`}
+        alt='image'
+      />
       <h2 className='cursor-pointer text-xl my-1 md:text-2xl md:my-3'>
         {data.title}
       </h2>
@@ -16,7 +20,7 @@ const PostCard = ({ data }: PostCardProps) => {
         {data.description}
       </p>
       <div className='cursor-pointer'>{data.publishedDate}</div>
-    </>
+    </div>
   );
 };
 

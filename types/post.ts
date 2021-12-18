@@ -8,4 +8,5 @@ export type PostMetadata = {
   description: string;
   publishedDate: string;
   category: string;
+  thumbnail?: string;
 };
