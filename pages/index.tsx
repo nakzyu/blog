@@ -16,7 +16,7 @@ const PostsByAllCategoryPage = ({
   return (
     <>
       <CategoryNavBar categories={categories} currentCategory={"All"} />
-      <PostList posts={posts} />;
+      <PostList posts={posts} />
     </>
   );
 };

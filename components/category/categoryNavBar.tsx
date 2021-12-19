@@ -10,7 +10,6 @@ const CategoryNavBar = ({
   categories,
   currentCategory,
 }: CategoryNavBarProps) => {
-  console.log(currentCategory);
   const sum = categories.reduce((a, b) => a + b.count, 0);
   const isSelected = (target: string) => target === currentCategory;
   const makeCategories = (isBordered: boolean) => [

@@ -24,7 +24,7 @@ const Header = ({ route }: HeaderProps) => {
   const match = (r: string) => (routeMaps[r] ? true : false);
 
   return (
-    <header className='flex justify-between mx-2 '>
+    <header className='flex justify-between mx-4 md:mx-0 '>
       <Image src='/images/profile.jpg' alt='image' width='50' height='50' />
       <div className='flex justify-between items-center'>
         {genLink("about", "ABOUT", match(route))}

@@ -17,14 +17,18 @@ const CategoryTag = ({
     <Link href={text === "All" ? "/" : `/category/${text}`} passHref>
       {isBordered ? (
         <p
-          className={`cursor-pointer border-2 mx-1 rounded border-gray-900 px-1 hover:text-white hover:bg-gray-900 ${
+          className={`cursor-pointer border-2 mr-2 rounded border-neutral-900 px-1 hover:text-white hover:bg-neutral-900 ${
             isSelected ? "bg-neutral-900 text-white" : ""
           }`}
         >
           {text} {count ? `(${count})` : ""}
         </p>
       ) : (
-        <p className='cursor-pointer text-m text-gray-600 my-0.5 flex'>
+        <p
+          className={`cursor-pointer text-m text-neutral-600 my-0.5 flex ${
+            isSelected ? "text-neutral-900 font-bold" : ""
+          }`}
+        >
           {text} {count ? `(${count})` : ""}
         </p>
       )}

@@ -24,7 +24,7 @@ const PostsByCategoryPage = ({
         categories={categories}
         currentCategory={posts[0].data.category}
       />
-      <PostList posts={posts} />;
+      <PostList posts={posts} />
     </>
   );
 };

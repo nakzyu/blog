@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           <Header route={route} />
         </div>
       </div>
-      <div className='w-full'>
+      <div className='mx-4 md:mx-0'>
         <div className='max-w-2xl m-auto min-h-screen'>
           <Component {...pageProps} />
         </div>
