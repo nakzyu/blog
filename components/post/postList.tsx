@@ -1,6 +1,5 @@
 import { Post } from "../../types/post";
 import PostCard from "./postCard";
-import Link from "next/link";
 
 type PostListProps = {
   posts: Post[];
