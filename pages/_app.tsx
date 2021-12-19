@@ -7,13 +7,13 @@ import "../styles/globals.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  console.log(router.route);
+  const route = router.route.split("/")[1];
 
   return (
     <div className='flex-col'>
       <div className='w-full border-b bg-neutral-900 text-white border-b-neutral-200'>
         <div className='max-w-4xl m-auto sm:max-h-16 lg:max-h-28'>
-          <Header />
+          <Header route={route} />
         </div>
       </div>
       <div className='w-full'>

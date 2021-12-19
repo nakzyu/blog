@@ -1,11 +1,37 @@
+import { CategoryFreq } from "../../types/categoryFreq";
 import CategoryTag from "./categoryTag";
-import CategoryTagWithBlock from "./categoryTagWithBlock";
 
 type CategoryNavBarProps = {
-  categories: string[];
+  categories: CategoryFreq[];
+  currentCategory: string;
 };
 
-const CategoryNavBar = ({ categories }: CategoryNavBarProps) => {
+const CategoryNavBar = ({
+  categories,
+  currentCategory,
+}: CategoryNavBarProps) => {
+  console.log(currentCategory);
+  const sum = categories.reduce((a, b) => a + b.count, 0);
+  const isSelected = (target: string) => target === currentCategory;
+  const makeCategories = (isBordered: boolean) => [
+    <CategoryTag
+      key='All'
+      text='All'
+      count={sum}
+      isBordered={isBordered}
+      isSelected={isSelected("All")}
+    />,
+    ...categories.map(({ text, count }) => (
+      <CategoryTag
+        key={text}
+        text={text}
+        count={count}
+        isBordered={isBordered}
+        isSelected={isSelected(text)}
+      />
+    )),
+  ];
+
   return (
     <>
       <div className='relatvie invisible xl:visible'>
@@ -15,24 +41,19 @@ const CategoryNavBar = ({ categories }: CategoryNavBarProps) => {
               <div className='text-xl my-1 md:text-2xl md:my-3'>Categories</div>
               <div className='w-16 h-0.5 bg-neutral-900' />
               <ul className='list-none flex-col mt-3'>
-                <CategoryTag text='전체' count={15} />
-                <CategoryTag text='개발' count={5} />
-                <CategoryTag text='잡담' count={10} />
+                {makeCategories(false)}
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div className='visible my-3 xl:invisible'>
+      <div className='visible none my-3 xl:hidden'>
         <div>
           <p className='my-2 text-xl'>Categories</p>
           <div className='w-16 h-0.5 bg-neutral-900' />
         </div>
-        <ul className='mt-3 flex list-none'>
-          <CategoryTagWithBlock text='전체' />
-          <CategoryTagWithBlock text='개발' />
-          <CategoryTagWithBlock text='잡담' />
-        </ul>
+        <ul className='mt-3 flex list-none'>{makeCategories(true)}</ul>
+        <div className='bg-neutral-200 h-0.5 mt-3' />
       </div>
     </>
   );

@@ -2,6 +2,7 @@ import fs, { readFileSync } from "fs";
 import path from "path";
 import { Post } from "../types/post";
 import matter from "gray-matter";
+import { CategoryFreq } from "../types/categoryFreq";
 
 const root = process.cwd();
 const postsDir = path.join(root + "/posts/");
@@ -24,8 +25,20 @@ export const getAllPathsOfCategories = () => {
   const categoryPaths = Array.from(categorySet).map((category) => ({
     params: { category },
   }));
+
   return categoryPaths;
 };
+
+export const getAllCategoriesAndFreqs = (): CategoryFreq[] =>
+  Object.entries(
+    getAllPosts().reduce((a, b) => {
+      if (!a[b.data.category]) {
+        a[b.data.category] = 0;
+      }
+      a[b.data.category] += 1;
+      return a;
+    }, {} as Record<string, number>)
+  ).map(([text, count]) => ({ text, count }));
 
 export const getAllPathsOfPosts = () =>
   getAllPosts().map(({ data }) => ({

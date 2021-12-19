@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { PostMetadata } from "../../types/post";
-import CategoryTagWithBlock from "../category/categoryTagWithBlock";
+import CategoryTag from "../category/categoryTag";
 
 type PostCardProps = {
   data: PostMetadata;
@@ -21,7 +21,11 @@ const PostCard = ({ data }: PostCardProps) => {
         {data.description}
       </p>
       <div className='cursor-pointer flex'>
-        <CategoryTagWithBlock text={data.category} />
+        <CategoryTag
+          text={data.category}
+          isSelected={false}
+          isBordered={true}
+        />
         <p className='ml-2 mt-0.5'>{data.publishedDate}</p>
       </div>
     </div>
