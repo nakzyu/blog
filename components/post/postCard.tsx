@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { PostMetadata } from "../../types/post";
+import CategoryTagWithBlock from "../category/categoryTagWithBlock";
 
 type PostCardProps = {
   data: PostMetadata;
@@ -16,10 +17,13 @@ const PostCard = ({ data }: PostCardProps) => {
       <h2 className='cursor-pointer text-xl my-1 md:text-2xl md:my-3'>
         {data.title}
       </h2>
-      <p className='text-sm text-gray-600 my-2 md:text-base md:my-4'>
+      <p className='text-sm cursor-pointer text-gray-600 my-2 md:text-base md:my-4'>
         {data.description}
       </p>
-      <div className='cursor-pointer'>{data.publishedDate}</div>
+      <div className='cursor-pointer flex'>
+        <CategoryTagWithBlock text={data.category} />
+        <p className='ml-2 mt-0.5'>{data.publishedDate}</p>
+      </div>
     </div>
   );
 };

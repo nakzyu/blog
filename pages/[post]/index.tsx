@@ -1,4 +1,5 @@
 import { GetStaticPropsContext } from "next";
+import CategoryNavBar from "../../components/category/categoryNavBar";
 import PostBody from "../../components/post/postBody";
 import PostHead from "../../components/post/postHead";
 import { Post } from "../../types/post";
@@ -16,6 +17,7 @@ const PostPage = ({ post }: PostPageProps) => {
   return (
     <>
       <SetHead title={post.data.title} options={headOptions} />
+      <CategoryNavBar categories={[]} />
       <PostHead data={post.data} content={post.content} />
       <PostBody data={post.data} content={post.content} />
     </>
