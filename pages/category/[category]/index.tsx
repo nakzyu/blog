@@ -5,7 +5,7 @@ import {
   getAllPathsOfCategories,
   getAllCategoriesAndFreqs,
 } from "../../../utils/postHandler";
-import PostList from "../../../components/post/postList";
+import PostList from "../../../components/post/postsList";
 import CategoryNavBar from "../../../components/category/categoryNavBar";
 import { CategoryFreq } from "../../../types/categoryFreq";
 

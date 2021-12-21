@@ -1,5 +1,5 @@
 import { getAllCategoriesAndFreqs, getAllPosts } from "../utils/postHandler";
-import PostList from "../components/post/postList";
+import PostList from "../components/post/postsList";
 import { Post } from "../types/post";
 import CategoryNavBar from "../components/category/categoryNavBar";
 import { CategoryFreq } from "../types/categoryFreq";
