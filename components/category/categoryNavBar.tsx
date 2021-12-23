@@ -12,12 +12,12 @@ const CategoryNavBar = ({
 }: CategoryNavBarProps) => {
   const sum = categories.reduce((a, b) => a + b.count, 0);
   const isSelected = (target: string) => target === currentCategory;
-  const makeCategories = (isBordered: boolean) => [
+  const makeCategories = (isVertical: boolean) => [
     <CategoryTag
       key='All'
       text='All'
       count={sum}
-      isBordered={isBordered}
+      isVertical={isVertical}
       isSelected={isSelected("All")}
     />,
     ...categories.map(({ text, count }) => (
@@ -25,7 +25,7 @@ const CategoryNavBar = ({
         key={text}
         text={text}
         count={count}
-        isBordered={isBordered}
+        isVertical={isVertical}
         isSelected={isSelected(text)}
       />
     )),
