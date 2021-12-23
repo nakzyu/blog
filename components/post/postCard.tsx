@@ -31,7 +31,7 @@ const PostCard = ({ data }: PostCardProps) => {
         <CategoryTag
           text={data.category}
           isSelected={false}
-          isBordered={true}
+          isVertical={true}
         />
         <p className='mt-0.5'>{fromNow(data.publishedDate)}</p>
       </div>
