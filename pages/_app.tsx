@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <div className='flex-col'>
-      <div className='w-full border-b bg-neutral-900 text-white border-b-neutral-200'>
-        <div className='max-w-4xl m-auto sm:max-h-16 lg:max-h-28'>
+      <div className='w-full bg-neutral-900 text-white border-b-neutral-200'>
+        <div className='max-w-4xl m-auto h-16 lg:max-h-28'>
           <Header route={route} />
         </div>
       </div>

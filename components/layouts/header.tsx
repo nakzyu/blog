@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const genLink = (route: string, text: string, isActive: boolean) => {
@@ -24,8 +23,8 @@ const Header = ({ route }: HeaderProps) => {
   const match = (r: string) => (routeMaps[r] ? true : false);
 
   return (
-    <header className='flex justify-between mx-4 lg:mx-0 '>
-      <Image src='/images/profile.jpg' alt='image' width='50' height='50' />
+    <header className='flex h-full items-center justify-between mx-4 lg:mx-0 '>
+      <div>logo</div>
       <div className='flex justify-between items-center'>
         {genLink("about", "ABOUT", match(route))}
         {genLink("", "POSTS", !match(route))}
