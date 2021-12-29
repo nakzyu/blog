@@ -16,7 +16,6 @@ const PostPage = ({ post }: PostPageProps) => {
   return (
     <>
       <SetHead title={post.data.title} options={headOptions} />
-
       <PostHead data={post.data} content={post.content} />
       <PostBody data={post.data} content={post.content} />
     </>
