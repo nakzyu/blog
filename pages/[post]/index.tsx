@@ -1,4 +1,6 @@
 import { GetStaticPropsContext } from "next";
+import Comments from "../../components/layouts/comments";
+
 import PostBody from "../../components/post/postBody";
 import PostHead from "../../components/post/postHead";
 import { Post } from "../../types/post";
@@ -18,6 +20,7 @@ const PostPage = ({ post }: PostPageProps) => {
       <SetHead title={post.data.title} options={headOptions} />
       <PostHead data={post.data} content={post.content} />
       <PostBody data={post.data} content={post.content} />
+      <Comments />
     </>
   );
 };
