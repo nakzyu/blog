@@ -3,11 +3,12 @@ import path from "path";
 import { Post } from "../types/post";
 import matter from "gray-matter";
 import { TagFreq } from "../types/tagFreq";
+import { toDate } from "./dateHandler";
 
 const root = process.cwd();
 const postsDir = path.join(root + "/posts/");
 
-export const getAllPosts = () =>
+export const getAllPosts = (): Post[] =>
   fs
     .readdirSync(postsDir)
     .map((fileName) => matter(readFileSync(postsDir + fileName, "utf-8")))
@@ -17,6 +18,9 @@ export const getAllPosts = () =>
           content: post.content,
           data: post.data,
         } as Post)
+    )
+    .sort(
+      (a, b) => +toDate(b.data.publishedDate) - +toDate(a.data.publishedDate)
     );
 
 export const getAllPathsOfTags = () => {
