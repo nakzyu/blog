@@ -1,6 +1,5 @@
 import { GetStaticPropsContext } from "next";
 import Comments from "../../components/layouts/comments";
-
 import PostBody from "../../components/post/postBody";
 import PostHead from "../../components/post/postHead";
 import { Post } from "../../types/post";

@@ -2,7 +2,7 @@ import fs, { readFileSync } from "fs";
 import path from "path";
 import { Post } from "../types/post";
 import matter from "gray-matter";
-import { CategoryFreq } from "../types/categoryFreq";
+import { TagFreq } from "../types/tagFreq";
 
 const root = process.cwd();
 const postsDir = path.join(root + "/posts/");
@@ -19,23 +19,23 @@ export const getAllPosts = () =>
         } as Post)
     );
 
-export const getAllPathsOfCategories = () => {
-  const categorySet = new Set<string>();
-  getAllPosts().forEach((post) => categorySet.add(post.data.category));
-  const categoryPaths = Array.from(categorySet).map((category) => ({
-    params: { category },
+export const getAllPathsOfTags = () => {
+  const tagSet = new Set<string>();
+  getAllPosts().forEach((post) => tagSet.add(post.data.tag));
+  const tagPaths = Array.from(tagSet).map((tag) => ({
+    params: { tag },
   }));
 
-  return categoryPaths;
+  return tagPaths;
 };
 
-export const getAllCategoriesAndFreqs = (): CategoryFreq[] =>
+export const getAllTagsAndFreqs = (): TagFreq[] =>
   Object.entries(
     getAllPosts().reduce((a, b) => {
-      if (!a[b.data.category]) {
-        a[b.data.category] = 0;
+      if (!a[b.data.tag]) {
+        a[b.data.tag] = 0;
       }
-      a[b.data.category] += 1;
+      a[b.data.tag] += 1;
       return a;
     }, {} as Record<string, number>)
   ).map(([text, count]) => ({ text, count }));
@@ -45,8 +45,8 @@ export const getAllPathsOfPosts = () =>
     params: { post: data.title },
   }));
 
-export const getAllPostsByCategory = (category: string) =>
-  getAllPosts().filter(({ data }) => data.category === category);
+export const getAllPostsByTag = (tag: string) =>
+  getAllPosts().filter(({ data }) => data.tag === tag);
 
 export const getPost = (title: string) =>
   getAllPosts().find(({ data }) => title === data.title);

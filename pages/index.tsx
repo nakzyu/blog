@@ -1,21 +1,18 @@
-import { getAllCategoriesAndFreqs, getAllPosts } from "../utils/postHandler";
+import { getAllTagsAndFreqs, getAllPosts } from "../utils/postHandler";
 import PostList from "../components/post/postsList";
 import { Post } from "../types/post";
-import CategoryNavBar from "../components/category/categoryNavBar";
-import { CategoryFreq } from "../types/categoryFreq";
+import TagNavBar from "../components/tag/tagNavBar";
+import { TagFreq } from "../types/tagFreq";
 
-type PostsByAllCategoryPageProps = {
+type PostsByAllTagPageProps = {
   posts: Post[];
-  categories: CategoryFreq[];
+  tags: TagFreq[];
 };
 
-const PostsByAllCategoryPage = ({
-  posts,
-  categories,
-}: PostsByAllCategoryPageProps) => {
+const PostsByAllTagPage = ({ posts, tags }: PostsByAllTagPageProps) => {
   return (
     <>
-      <CategoryNavBar categories={categories} currentCategory={"All"} />
+      <TagNavBar tags={tags} currentTag={"All"} />
       <PostList posts={posts} />
     </>
   );
@@ -23,8 +20,8 @@ const PostsByAllCategoryPage = ({
 
 export const getStaticProps = () => {
   const posts = getAllPosts();
-  const categories = getAllCategoriesAndFreqs();
-  return { props: { posts, categories } };
+  const tags = getAllTagsAndFreqs();
+  return { props: { posts, tags } };
 };
 
-export default PostsByAllCategoryPage;
+export default PostsByAllTagPage;

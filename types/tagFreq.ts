@@ -1,4 +1,4 @@
-export type CategoryFreq = {
+export type TagFreq = {
   text: string;
   count: number;
 };

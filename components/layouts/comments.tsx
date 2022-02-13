@@ -4,20 +4,18 @@ const Comments = () => {
   const commentsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const $utterance = document.createElement("script") as HTMLScriptElement;
+    const $utterances = document.createElement("script") as HTMLScriptElement;
+    $utterances.src = "https://utteranc.es/client.js";
+    $utterances.async = true;
+    $utterances.crossOrigin = "anonymous";
+    $utterances.setAttribute("issue-term", "pathname");
+    $utterances.setAttribute("repo", "nakzyu/blog-comments");
+    $utterances.setAttribute("theme", "github-light");
 
-    $utterance.src = "https://utteranc.es/client.js";
-    $utterance.crossOrigin = "anonymous";
-    $utterance.async = true;
+    if (commentsRef.current) commentsRef.current.appendChild($utterances);
+  }, [commentsRef]);
 
-    $utterance.setAttribute("issue-term", "pathname");
-    $utterance.setAttribute("repo", "nakzyu/blog-comments");
-    $utterance.setAttribute("theme", "github-light");
-
-    commentsRef.current?.appendChild($utterance);
-  }, []);
-
-  return <div ref={commentsRef}></div>;
+  return <div ref={commentsRef} />;
 };
 
 export default Comments;
