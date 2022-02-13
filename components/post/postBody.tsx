@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 
 const PostBody = ({ content }: Post) => {
   return (
-    <ReactMarkdown className='reactMarkDown mt-10 md:mt-12'>
+    <ReactMarkdown className='reactMarkDown mt-10 md:mt-12 min-h-[50vh]'>
       {content}
     </ReactMarkdown>
   );

@@ -27,7 +27,7 @@ export default function Paginator({
     })
     .filter((item) => item !== null) as number[];
 
-  const renderItems = () =>
+  const makePageNumber = () =>
     allItems.map((number) => {
       const className = `${number == currnetPage && "bg-black"}`;
       return (
@@ -49,5 +49,34 @@ export default function Paginator({
         </Link>
       );
     });
+
+  const makeButton = (direction: "left" | "right") => {
+    const page = direction === "left" ? remnants - 9 : remnants + 11;
+
+    return (
+      <Link
+        href={{
+          query: tag
+            ? {
+                tag,
+                page,
+              }
+            : {
+                page,
+              },
+        }}
+        passHref
+      >
+        <li>{direction}</li>
+      </Link>
+    );
+  };
+
+  const renderItems = () => [
+    makeButton("left"),
+    ...makePageNumber(),
+    makeButton("right"),
+  ];
+
   return <ul className='flex justify-center items-center'>{renderItems()}</ul>;
 }
