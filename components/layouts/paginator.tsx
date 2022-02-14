@@ -7,6 +7,30 @@ export type PaginatorProps = {
   tag?: string;
 };
 
+type LinkProps = {
+  children: JSX.Element;
+  page: number;
+  tag?: string;
+};
+const GenLink = ({ children, page, tag }: LinkProps) => (
+  <Link
+    key={page}
+    href={{
+      query: tag
+        ? {
+            tag,
+            page,
+          }
+        : {
+            page,
+          },
+    }}
+    passHref
+  >
+    {children}
+  </Link>
+);
+
 export default function Paginator({
   length,
   itemsPerPage,
@@ -29,54 +53,41 @@ export default function Paginator({
 
   const makePageNumber = () =>
     allItems.map((number) => {
-      const className = `${number == currnetPage && "bg-black"}`;
+      const className = `${
+        number !== currnetPage ? "cursor-pointer " : "text-[#d31900] underline"
+      } px-1 font-bold text-m`;
       return (
-        <Link
-          key={number}
-          href={{
-            query: tag
-              ? {
-                  tag,
-                  page: number,
-                }
-              : {
-                  page: number,
-                },
-          }}
-          passHref
-        >
+        <GenLink key={number} page={number} tag={tag}>
           <li className={className}>{number}</li>
-        </Link>
+        </GenLink>
       );
     });
 
-  const makeButton = (direction: "left" | "right") => {
-    const page = direction === "left" ? remnants - 9 : remnants + 11;
-
+  const makeButton = (direction: "이전" | "다음") => {
+    const page = direction === "이전" ? remnants - 9 : remnants + 11;
     return (
-      <Link
-        href={{
-          query: tag
-            ? {
-                tag,
-                page,
-              }
-            : {
-                page,
-              },
-        }}
-        passHref
-      >
-        <li>{direction}</li>
-      </Link>
+      <GenLink key={direction} page={page} tag={tag}>
+        <li className='cursor-pointer px-1 text-m'>{direction}</li>
+      </GenLink>
     );
   };
 
-  const renderItems = () => [
-    makeButton("left"),
-    ...makePageNumber(),
-    makeButton("right"),
-  ];
+  const renderItems = () => {
+    const pageNumbers = makePageNumber();
 
-  return <ul className='flex justify-center items-center'>{renderItems()}</ul>;
+    const stingified = String(pageLength);
+    const lastRemnants = +stingified - +stingified[stingified.length - 1];
+
+    return [
+      remnants !== 0 && makeButton("이전"),
+      ...pageNumbers,
+      currnetPage <= lastRemnants && makeButton("다음"),
+    ];
+  };
+
+  return (
+    <ul className='flex justify-center items-center mt-16 mb-4'>
+      {renderItems()}
+    </ul>
+  );
 }

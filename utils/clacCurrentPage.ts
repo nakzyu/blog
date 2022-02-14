@@ -1,4 +1,4 @@
-export const calcCurrentPage = (
+const calcCurrentPage = (
   asPath: string,
   itemsLength: number,
   itemsPerPage: number
@@ -14,4 +14,15 @@ export const calcCurrentPage = (
     return 1;
   }
   return +targetPage;
+};
+
+export const clacPageInfo = (
+  asPath: string,
+  itemsLength: number,
+  itemsPerPage: number
+) => {
+  const currnetPage = calcCurrentPage(asPath, itemsLength, itemsPerPage);
+  const startIndex = itemsPerPage * (currnetPage - 1);
+  const endIndex = itemsPerPage * (currnetPage - 1) + itemsPerPage;
+  return { currnetPage, startIndex, endIndex };
 };

@@ -11,7 +11,7 @@ import { TagFreq } from "../../../types/tagFreq";
 import TagNavAndPostList from "../../../components/intergrated/TagNavAndPostList";
 import { ITEMS_PER_PAGE } from "../../../constants";
 import { useRouter } from "next/router";
-import { calcCurrentPage } from "../../../utils/clacCurrentPage";
+import { clacPageInfo } from "../../../utils/clacCurrentPage";
 
 type PostsByTagPageProps = {
   posts: Post[];
@@ -20,13 +20,16 @@ type PostsByTagPageProps = {
 
 const PostsByTagPage = ({ posts, tags }: PostsByTagPageProps) => {
   const { asPath } = useRouter();
-  const currnetPage = calcCurrentPage(asPath, posts.length, ITEMS_PER_PAGE);
-
+  const { currnetPage, startIndex, endIndex } = clacPageInfo(
+    asPath,
+    posts.length,
+    ITEMS_PER_PAGE
+  );
   return (
     <TagNavAndPostList
       tags={tags}
       currentTag={posts[0].data.tag}
-      posts={posts}
+      posts={posts.slice(startIndex, endIndex)}
       paginatorProps={{
         currnetPage,
         itemsPerPage: ITEMS_PER_PAGE,

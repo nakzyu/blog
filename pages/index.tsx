@@ -1,12 +1,10 @@
 import { getAllTagsAndFreqs, getAllPosts } from "../utils/postHandler";
-import PostList from "../components/post/postList";
 import { Post } from "../types/post";
-import TagNavBar from "../components/tag/tagNavBar";
 import { TagFreq } from "../types/tagFreq";
 import TagNavAndPostList from "../components/intergrated/TagNavAndPostList";
 import { ITEMS_PER_PAGE } from "../constants";
 import { useRouter } from "next/router";
-import { calcCurrentPage } from "../utils/clacCurrentPage";
+import { clacPageInfo } from "../utils/clacCurrentPage";
 
 type PostsByAllTagPageProps = {
   posts: Post[];
@@ -41,13 +39,17 @@ const PostsByAllTagPage = ({ posts, tags }: PostsByAllTagPageProps) => {
     ...posts,
   ];
 
-  const currnetPage = calcCurrentPage(asPath, posts.length, ITEMS_PER_PAGE);
+  const { currnetPage, startIndex, endIndex } = clacPageInfo(
+    asPath,
+    posts.length,
+    ITEMS_PER_PAGE
+  );
 
   return (
     <TagNavAndPostList
       tags={tags}
       currentTag={"All"}
-      posts={posts}
+      posts={posts.slice(startIndex, endIndex)}
       paginatorProps={{
         currnetPage,
         itemsPerPage: ITEMS_PER_PAGE,
