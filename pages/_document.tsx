@@ -7,7 +7,6 @@ import Document, {
   NextScript,
 } from "next/document";
 import React from "react";
-import { PUBLIC_URL } from "../constants";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -41,7 +40,6 @@ class MyDocument extends Document {
            gtag('config', 'G-JJ310FYZSN');`,
             }}
           />
-          <meta name='og:url' content={PUBLIC_URL} />
         </Head>
         <body>
           <Main />

@@ -24,7 +24,10 @@ const Header = ({ route }: HeaderProps) => {
 
   return (
     <header className='flex h-full items-center justify-between mx-4 lg:mx-0 '>
-      <div>logo</div>
+      <Link href='https://blog.nakzyu.ch' passHref>
+        <div className='cursor-pointer'>blog.nakzyu.ch</div>
+      </Link>
+
       <div className='flex justify-between items-center'>
         {genLink("about", "ABOUT", match(route))}
         {genLink("", "POSTS", !match(route))}
