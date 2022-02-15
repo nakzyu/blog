@@ -14,31 +14,6 @@ type PostsByAllTagPageProps = {
 const PostsByAllTagPage = ({ posts, tags }: PostsByAllTagPageProps) => {
   const { asPath } = useRouter();
 
-  posts = [
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-    ...posts,
-  ];
-
   const { currnetPage, startIndex, endIndex } = clacPageInfo(
     asPath,
     posts.length,

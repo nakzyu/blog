@@ -5,8 +5,6 @@ import {
   getAllPathsOfTags,
   getAllTagsAndFreqs,
 } from "../../../utils/postHandler";
-import PostList from "../../../components/post/postList";
-import TagNavBar from "../../../components/tag/tagNavBar";
 import { TagFreq } from "../../../types/tagFreq";
 import TagNavAndPostList from "../../../components/intergrated/TagNavAndPostList";
 import { ITEMS_PER_PAGE } from "../../../constants";
@@ -25,16 +23,19 @@ const PostsByTagPage = ({ posts, tags }: PostsByTagPageProps) => {
     posts.length,
     ITEMS_PER_PAGE
   );
+
+  const tag = posts[0].data.tag;
+
   return (
     <TagNavAndPostList
       tags={tags}
-      currentTag={posts[0].data.tag}
+      currentTag={tag}
       posts={posts.slice(startIndex, endIndex)}
       paginatorProps={{
         currnetPage,
         itemsPerPage: ITEMS_PER_PAGE,
         length: posts.length,
-        tag: tags[0].text,
+        tag,
       }}
     />
   );

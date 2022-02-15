@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/next-script-for-ga */
 import Document, {
   DocumentContext,
   Head,
@@ -6,6 +7,7 @@ import Document, {
   NextScript,
 } from "next/document";
 import React from "react";
+import { PUBLIC_URL } from "../constants";
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -24,6 +26,22 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap'
             rel='stylesheet'
           />
+
+          <script
+            async
+            src='https://www.googletagmanager.com/gtag/js?id=G-JJ310FYZSN'
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+           window.dataLayer = window.dataLayer || [];
+           function gtag(){dataLayer.push(arguments);}
+           gtag('js', new Date());
+         
+           gtag('config', 'G-JJ310FYZSN');`,
+            }}
+          />
+          <meta name='og:url' content={PUBLIC_URL} />
         </Head>
         <body>
           <Main />

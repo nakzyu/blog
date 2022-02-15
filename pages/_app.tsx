@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         </div>
       </div>
       <div className='mx-4 md:mx-0'>
-        <div className='max-w-2xl m-auto min-h-screen'>
+        <div className='max-w-2xl m-auto min-h-screen flex flex-col'>
           <Component {...pageProps} />
         </div>
       </div>
