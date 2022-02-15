@@ -1,15 +1,15 @@
 import Link from "next/link";
 
-type CategoryTagProps = {
+type TagProps = {
   text: string;
   isSelected: boolean;
   isVertical: boolean;
   count?: number;
 };
 
-const CategoryTag = ({ text, count, isSelected }: CategoryTagProps) => {
+const Tag = ({ text, count, isSelected }: TagProps) => {
   return (
-    <Link href={text === "All" ? "/" : `/category/${text}`} passHref>
+    <Link href={text === "All" ? "/" : `/tag/${text}`} passHref>
       <p
         className={`cursor-pointer text-m mb-1 mr-2 text-neutral-600 mt-0.5 flex ${
           isSelected ? "text-neutral-900 font-bold" : ""
@@ -21,4 +21,4 @@ const CategoryTag = ({ text, count, isSelected }: CategoryTagProps) => {
   );
 };
 
-export default CategoryTag;
+export default Tag;

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { PostMetadata } from "../../types/post";
 import { fromNow } from "../../utils/dateHandler";
-import CategoryTag from "../category/categoryTag";
+import Tag from "../tag/tag";
 
 type PostCardProps = {
   data: PostMetadata;
@@ -28,11 +28,7 @@ const PostCard = ({ data }: PostCardProps) => {
         {data.description}
       </p>
       <div className='flex'>
-        <CategoryTag
-          text={data.category}
-          isSelected={false}
-          isVertical={true}
-        />
+        <Tag text={data.tag} isSelected={false} isVertical={true} />
         <p className='mt-0.5'>{fromNow(data.publishedDate)}</p>
       </div>
     </div>

@@ -1,30 +1,43 @@
-import { getAllCategoriesAndFreqs, getAllPosts } from "../utils/postHandler";
-import PostList from "../components/post/postsList";
+import { getAllTagsAndFreqs, getAllPosts } from "../utils/postHandler";
 import { Post } from "../types/post";
-import CategoryNavBar from "../components/category/categoryNavBar";
-import { CategoryFreq } from "../types/categoryFreq";
+import { TagFreq } from "../types/tagFreq";
+import TagNavAndPostList from "../components/intergrated/TagNavAndPostList";
+import { ITEMS_PER_PAGE } from "../constants";
+import { useRouter } from "next/router";
+import { clacPageInfo } from "../utils/clacCurrentPage";
 
-type PostsByAllCategoryPageProps = {
+type PostsByAllTagPageProps = {
   posts: Post[];
-  categories: CategoryFreq[];
+  tags: TagFreq[];
 };
 
-const PostsByAllCategoryPage = ({
-  posts,
-  categories,
-}: PostsByAllCategoryPageProps) => {
+const PostsByAllTagPage = ({ posts, tags }: PostsByAllTagPageProps) => {
+  const { asPath } = useRouter();
+
+  const { currnetPage, startIndex, endIndex } = clacPageInfo(
+    asPath,
+    posts.length,
+    ITEMS_PER_PAGE
+  );
+
   return (
-    <>
-      <CategoryNavBar categories={categories} currentCategory={"All"} />
-      <PostList posts={posts} />
-    </>
+    <TagNavAndPostList
+      tags={tags}
+      currentTag={"All"}
+      posts={posts.slice(startIndex, endIndex)}
+      paginatorProps={{
+        currnetPage,
+        itemsPerPage: ITEMS_PER_PAGE,
+        length: posts.length,
+      }}
+    />
   );
 };
 
 export const getStaticProps = () => {
   const posts = getAllPosts();
-  const categories = getAllCategoriesAndFreqs();
-  return { props: { posts, categories } };
+  const tags = getAllTagsAndFreqs();
+  return { props: { posts, tags } };
 };
 
-export default PostsByAllCategoryPage;
+export default PostsByAllTagPage;

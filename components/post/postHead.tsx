@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Post } from "../../types/post";
 import { fromNow } from "../../utils/dateHandler";
-import CategoryTag from "../category/categoryTag";
+import Tag from "../tag/tag";
 
 const PostHead = ({ data }: Post) => (
   <div className='mt-6'>
@@ -9,7 +9,7 @@ const PostHead = ({ data }: Post) => (
       {data.title}
     </h1>
     <div className='flex mt-4 md:mt-8'>
-      <CategoryTag text={data.category} isSelected={false} isVertical={true} />
+      <Tag text={data.tag} isSelected={false} isVertical={true} />
       <p className='mt-0.5'>{fromNow(data.publishedDate)}</p>
     </div>
     <img

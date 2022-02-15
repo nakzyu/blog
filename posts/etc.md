@@ -2,7 +2,7 @@
 title: 취업 전선(戰線)
 description: 취업 전선(戰線)
 publishedDate: "2021-12-20 11:30:30"
-category: etc
+tag: etc
 thumbnail: screenshot.png
 ---
 
