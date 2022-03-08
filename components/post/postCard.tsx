@@ -24,7 +24,7 @@ const PostCard = ({ data }: PostCardProps) => {
         </h2>
       </Link>
 
-      <p className='text-sm text-gray-600 my-2 md:text-base md:my-4'>
+      <p className='text-sm text-[#c9d1d9] my-2 md:text-base md:my-4'>
         {data.description}
       </p>
       <div className='flex'>
