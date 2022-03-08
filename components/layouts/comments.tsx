@@ -10,12 +10,12 @@ const Comments = () => {
     $utterances.crossOrigin = "anonymous";
     $utterances.setAttribute("issue-term", "pathname");
     $utterances.setAttribute("repo", "nakzyu/blog-comments");
-    $utterances.setAttribute("theme", "github-light");
+    $utterances.setAttribute("theme", "github-dark");
 
     if (commentsRef.current) commentsRef.current.appendChild($utterances);
   }, [commentsRef]);
 
-  return <div ref={commentsRef} />;
+  return <div className='mb-12' ref={commentsRef} />;
 };
 
 export default Comments;

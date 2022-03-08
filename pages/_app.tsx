@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <>
       <SetHead title='blog.nakzyu.ch' options={headOptions} />
       <div className='flex-col'>
-        <div className='w-full bg-neutral-900 text-white border-b-neutral-200'>
+        <div className='w-full bg-[#181818] text-white border-b-neutral-200'>
           <div className='max-w-4xl m-auto h-16 lg:max-h-28'>
             <Header route={route} />
           </div>
@@ -31,7 +31,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
           </div>
         </div>
-        <div className='w-full bg-neutral-900 text-white'>
+        <div className='w-full bg-[#181818] text-white'>
           <div className='max-w-4xl m-auto h-16'>
             <Footer />
           </div>
