@@ -15,7 +15,7 @@ const Comments = () => {
     if (commentsRef.current) commentsRef.current.appendChild($utterances);
   }, [commentsRef]);
 
-  return <div className='mb-12' ref={commentsRef} />;
+  return <div className='my-12' ref={commentsRef} />;
 };
 
 export default Comments;

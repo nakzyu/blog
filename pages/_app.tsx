@@ -5,7 +5,7 @@ import Header from "../components/layouts/header";
 import { PUBLIC_URL } from "../constants";
 import SetHead from "../utils/ApplyHead";
 
-import "../styles/globals.scss";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
