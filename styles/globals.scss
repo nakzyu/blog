@@ -30,6 +30,9 @@ body::-webkit-scrollbar-thumb {
 
 .markdown-body ul {
   list-style: disc;
+  ul {
+    list-style: circle;
+  }
 }
 
 .markdown-body .octicon {
@@ -96,7 +99,7 @@ body::-webkit-scrollbar-thumb {
   margin: 0.67em 0;
   font-weight: 600;
   padding-bottom: 0.3em;
-  font-size: 2em;
+  font-size: 2.25em;
   border-bottom: 1px solid #21262d;
 }
 
@@ -282,18 +285,18 @@ body::-webkit-scrollbar-thumb {
 .markdown-body h2 {
   font-weight: 600;
   padding-bottom: 0.3em;
-  font-size: 1.5em;
+  font-size: 1.75em;
   border-bottom: 1px solid #21262d;
 }
 
 .markdown-body h3 {
   font-weight: 600;
-  font-size: 1.25em;
+  font-size: 1.5em;
 }
 
 .markdown-body h4 {
   font-weight: 600;
-  font-size: 1em;
+  font-size: 1.25em;
 }
 
 .markdown-body h5 {

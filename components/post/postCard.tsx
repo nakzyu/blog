@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { PostMetadata } from "../../types/post";
-import { fromNow } from "../../utils/dateHandler";
 import Tag from "../tag/tag";
+import TimeToolTip from "./TimeToolTip";
 
 type PostCardProps = {
   data: PostMetadata;
@@ -11,13 +11,15 @@ type PostCardProps = {
 const PostCard = ({ data }: PostCardProps) => {
   return (
     <div className='mt-4 md:mt-6'>
-      <Link href={`/${data.title}`} passHref>
-        <img
-          className='cursor-pointer object-cover w-full h-64 md:h-96 '
-          src={`/images/${data.thumbnail || "profile.jpg"}`}
-          alt='image'
-        />
-      </Link>
+      {data.thumbnail && (
+        <Link href={`/${data.title}`} passHref>
+          <img
+            className='cursor-pointer object-cover w-full h-64 md:h-96 '
+            src={`/images/${data.thumbnail || "profile.jpg"}`}
+            alt='image'
+          />
+        </Link>
+      )}
       <Link href={`/${data.title}`} passHref>
         <h2 className='cursor-pointer text-xl my-1 md:text-2xl md:my-3'>
           {data.title}
@@ -29,7 +31,7 @@ const PostCard = ({ data }: PostCardProps) => {
       </p>
       <div className='flex'>
         <Tag text={data.tag} isSelected={false} isVertical={true} />
-        <p className='mt-0.5'>{fromNow(data.publishedDate)}</p>
+        <TimeToolTip publishedDate={data.publishedDate} />
       </div>
     </div>
   );
