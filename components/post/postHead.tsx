@@ -3,7 +3,7 @@
 import { Post } from "../../types/post";
 
 import Tag from "../tag/tag";
-import TimeToolTip from "./TimeToolTip";
+import TimeToolTip from "./timeToolTip";
 
 const PostHead = ({ data }: Post) => {
   return (
