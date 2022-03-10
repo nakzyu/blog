@@ -97,14 +97,14 @@ DMBS의 구현 모델에 맞춰 데이터를 표헌하는 과정
 
 다대다 관계 => 새로운 릴레이션 생성
 
-![relation](/images/db-data-modeling/1.png)
+![relation](/images/posts/db-relational-model/1.png)
 
 - 1대1의 관계에서 FK는 어디로 가는지?
   - 레코드의 개수가 적은쪽에 넣는게 바람직.
 
 약한개체집합에 대해서는 부분키(밑줄점선)과 참조되는 외래키를 합쳐서 그 테이블의 기본키가 됨
 
-![relation](/images/db-data-modeling/2.png)
+![relation](/images/posts/db-relational-model/2.png)
 
 ## 데이터 연산
 
