@@ -7,3 +7,6 @@ thumbnail: cat.gif
 ---
 
 아무거나 올리는 블로그 입니다.
+
+Lift($L$) can be determined by Lift Coefficient ($C_L$) like the following
+equation.
