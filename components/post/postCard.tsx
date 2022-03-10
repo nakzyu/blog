@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { PostMetadata } from "../../types/post";
 import Tag from "../tag/tag";
-import TimeToolTip from "./TimeToolTip";
+import TimeToolTip from "./timeToolTip";
 
 type PostCardProps = {
   data: PostMetadata;
