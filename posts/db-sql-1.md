@@ -12,6 +12,7 @@ tag: CS
 ### SQL의 구성
 
 - 데이터 정의 언어 (DDL)
+
   - 데이터베이스 내 객체를 생성 및 삭제하고 그 구조를 조작하는 명령어 집합
   - 데이터가 준수해야하는 제약 조건 기술
   - CREATE, ALTER, DROP 등
@@ -26,6 +27,7 @@ tag: CS
 ### DDL의 개념
 
 - 데이터베이스 객체 종류
+
   - 데이터 저장
     - 테이블, 인덱스, 뷰
   - 데이터 조작
@@ -67,12 +69,15 @@ DROP  SCHEMA 스키마이름
 ### 정수 데이터 타입
 
 - TINYINT
+
   - 1바이트 정수, -128 ~ 127
 
 - SMALLINT
+
   - 1바이트 정수, -32768 ~ 32767
 
 - INT
+
   - 4바이트 정수, 약 -20억 ~ 약 20억
 
 - BIGINT
@@ -81,6 +86,7 @@ DROP  SCHEMA 스키마이름
 ### 실수 데이터 타입
 
 - 고정 소수형
+
   - DECIAML(M, N)
     - 전체 M자리, 소수점 이하 N자리
   - NUMERIC
@@ -97,12 +103,14 @@ DROP  SCHEMA 스키마이름
 ### 날짜 및 시간 데이터 타입
 
 - 날짜 데이터 타입
+
   - DATE
     - "YYYY-MM-DD"
   - YEAR
     - "YYYY"
 
 - 시간 및 데이터 타입
+
   - TIME
     - "HH:MI:SS" 형식의 시간
 
@@ -115,12 +123,14 @@ DROP  SCHEMA 스키마이름
 ### 문자 데이터 타입
 
 - CHAR(N)
+
   - 최대길이가 N인 고정길이 문자열
 
 - VARCHAR(N)
   - 최대길이가 N인 가변길이 문자열
 
 * TEXT, CLOB
+
   - 길이가 최대 2~4GB인 가변길이 문자열
 
 * ENUM
@@ -155,20 +165,25 @@ DROP TABLE 테이블이름
 ### 제약 조건의 종류
 
 - PRIMARY KEY
+
   - 기본키 지정
   - UNIQUE, NOT NULL
 
 - FOREIGN KEY
+
   - 외래키 지정
   - 참조 컬럼 정의
 
 - NOT NULL
+
   - NULL 이 될 수 없는 칼럼
 
 - UNIQUE
+
   - 동일한 컬럼값을 가질 수 없음
 
 - AUTO_INCREMENT
+
   - 레코드가 추가될 때 자동으로 속성값이 1부터 1씩 증가되어 입력
 
 - CHECK
