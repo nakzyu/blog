@@ -19,5 +19,5 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["react", "@typescript-eslint"],
-  rules: {},
+  rules: { "@next/next/no-img-element": "off" },
 };

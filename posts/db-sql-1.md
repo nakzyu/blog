@@ -127,7 +127,6 @@ DROP  SCHEMA 스키마이름
   - 최대길이가 N인 고정길이 문자열
 
 - VARCHAR(N)
-
   - 최대길이가 N인 가변길이 문자열
 
 * TEXT, CLOB
@@ -140,7 +139,7 @@ DROP  SCHEMA 스키마이름
 - "DATABASE" 문자열 저장 시,
   - CHAR(10)
     - ['D', 'A', 'T', 'A', 'B', 'A', 'S', 'E', ' ', ' ']
-  - VARCHAR(110)
+  - VARCHAR(10)
     - ['D', 'A', 'T', 'A', 'B', 'A', 'S', 'E']
     - VARCHAR -> 공간 낭비가 없지만, 길이가 달라질 경우 레코드 전체 인덱스 정렬에 trade-off가 생김
 

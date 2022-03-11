@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import { PostMetadata } from "../../types/post";
 import Tag from "../tag/tag";
