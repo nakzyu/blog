@@ -1,7 +1,7 @@
 ---
 title: 데이터베이스 - [SQL 2]
 description: 데이터 삽입, 수정, 삭제, 검색에 관한 구문
-publishedDate: "2022-03-11 19:00:00"
+publishedDate: "2022-03-11 17:21:00"
 tag: CS
 ---
 
