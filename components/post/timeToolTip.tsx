@@ -23,7 +23,7 @@ const TimeToolTip = ({ publishedDate }: TimeToolTipProps) => {
       <p className='cursor-pointer pr-1'>{fromNow(publishedDate)}</p>
       <img
         className='w-4 h-4 mt-0.5 cursor-pointer'
-        src='images/info.svg'
+        src='/images/info.svg'
         alt='info-icon'
       />
       <div
