@@ -125,8 +125,10 @@ SELECT * /* asterisk => 전체선택 */
     FROM 테이블
 ```
 
+중복 제거
+
 ```sql
-SELECT DISTINCT 컬럼 /* DISTNICT => 중복을 제거 */
+SELECT DISTINCT 컬럼 /* DISTNICT => 중복을 제거, 다른함수와 결합하여 사용 될때 컬럼 바로 앞에 붙임 ex) COUNT(DISTINCT 컬럼) */
     FROM 테이블
 ```
 
