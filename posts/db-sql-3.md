@@ -1,6 +1,6 @@
 ---
 title: 데이터베이스 - [SQL 3]
-description:
+description: 고급 함수 및 뷰
 publishedDate: "2022-03-13 07:08:00"
 tag: CS
 ---
