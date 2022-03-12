@@ -1,7 +1,7 @@
 ---
 title: 데이터베이스 - [SQL 2]
 description: 데이터 삽입, 수정, 삭제, 검색에 관한 구문
-publishedDate: "2022-03-11 17:21:00"
+publishedDate: "2022-03-12 17:21:00"
 tag: CS
 ---
 
@@ -16,7 +16,7 @@ tag: CS
 
 ```sql
 INSERT INTO 테이블이름
-    VALUES($$값_1$$, $값_2$, ...$값_n$)
+    VALUES(값1, 값2, ...값n)
 ```
 
 ```sql
@@ -125,10 +125,10 @@ SELECT * /* asterisk => 전체선택 */
     FROM 테이블
 ```
 
-중복 제거
+- DISTNICT => 중복을 제거, 다른함수와 결합하여 사용 될때 컬럼 바로 앞에 붙임 ex) COUNT(DISTINCT 컬럼)
 
 ```sql
-SELECT DISTINCT 컬럼 /* DISTNICT => 중복을 제거, 다른함수와 결합하여 사용 될때 컬럼 바로 앞에 붙임 ex) COUNT(DISTINCT 컬럼) */
+SELECT DISTINCT 컬럼
     FROM 테이블
 ```
 
