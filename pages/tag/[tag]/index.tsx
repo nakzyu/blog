@@ -6,7 +6,7 @@ import {
   getAllTagsAndFreqs,
 } from "../../../utils/postHandler";
 import { TagFreq } from "../../../types/tagFreq";
-import TagNavAndPostList from "../../../components/intergrated/TagNavAndPostList";
+import TagNavAndPostList from "../../../components/intergrated/tagNavAndPostList";
 import { ITEMS_PER_PAGE } from "../../../constants";
 import { useRouter } from "next/router";
 import { clacPageInfo } from "../../../utils/clacCurrentPage";
