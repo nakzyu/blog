@@ -1,6 +1,6 @@
 ---
 title: 데이터베이스 - [SQL 1]
-description: SQL 1
+description: DDL 및 SQL 기본적 조작 방법
 publishedDate: "2022-03-11 07:15:00"
 tag: CS
 ---
