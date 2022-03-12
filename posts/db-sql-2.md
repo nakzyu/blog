@@ -34,12 +34,6 @@ UPDATE 테이블이름
     WHERE 조건
 ```
 
-```sql
-UPDATE 테이블이름
-    SET 컬럼1=값1, [,컬럼2=값2, ... 컬럼n=값n]
-    WHERE 조건
-```
-
 ### DELETE
 
 ```sql
