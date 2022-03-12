@@ -8,7 +8,7 @@ const Footer = () => {
         <Link href='https://github.com/nakzyu' passHref>
           <img
             className=' cursor-pointer w-6 h-6'
-            src='images/GitHub-Mark-Light-64px.png'
+            src='/images/GitHub-Mark-Light-64px.png'
             alt='githubMark'
           />
         </Link>
