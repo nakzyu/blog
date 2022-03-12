@@ -9,7 +9,6 @@ type SceneComponentProps = {
 const SceneComponent = ({ onRender, onSceneReady }: SceneComponentProps) => {
   const reactCanvas = useRef(null);
 
-  // set up basic engine and scene
   useEffect(() => {
     const { current: canvas } = reactCanvas;
 
