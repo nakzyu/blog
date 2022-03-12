@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 
-const Babylon = dynamic(() => import("./babylon"), { ssr: false });
+// const Babylon = dynamic(() => import("./babylon"), { ssr: false });
 
 export default function About() {
-  return <Babylon />;
+  return <div>준비중</div>;
 }
