@@ -25,7 +25,9 @@ const SyntaxHighlight: object = {
         {children[0].slice(0, children[0].length - 1)}
       </SyntaxHighlighter>
     ) : (
-      <code className={className} {...props} />
+      <code className='emptyCodeBlock' {...props}>
+        {children[0].slice(0, children[0].length)}
+      </code>
     );
   },
 };
