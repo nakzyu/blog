@@ -1,4 +1,3 @@
-import { ReactChild } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark as theme } from "react-syntax-highlighter/dist/cjs/styles/prism";
 
