@@ -1,6 +1,6 @@
 import { Post } from "../../types/post";
-import MarkdownRender from "../markdownRender";
+import MarkdownRenderer from "../markdownRenderer";
 
-const PostBody = ({ content }: Post) => <MarkdownRender content={content} />;
+const PostBody = ({ content }: Post) => <MarkdownRenderer content={content} />;
 
 export default PostBody;
