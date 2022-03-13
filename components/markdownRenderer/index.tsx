@@ -6,7 +6,7 @@ import gfm from "remark-gfm";
 import "katex/dist/katex.min.css";
 import SyntaxHighlight from "./syntaxHighlight";
 
-const MarkdownRender = ({ content }: { content: string }) => {
+const MarkdownRenderer = ({ content }: { content: string }) => {
   return (
     <ReactMarkdown
       className='markdown-body mt-10 md:mt-12 min-h-[25vh] text-[#c9d1d9] '
@@ -19,4 +19,4 @@ const MarkdownRender = ({ content }: { content: string }) => {
   );
 };
 
-export default MarkdownRender;
+export default MarkdownRenderer;
