@@ -861,15 +861,18 @@ body::-webkit-scrollbar-thumb {
 
 .markdown-body .highlight pre,
 .markdown-body pre {
-  // padding: 16px;
-  overflow: auto;
   font-size: 85%;
   line-height: 1.45;
-  // background-color: #161b22;
   border-radius: 6px;
 
   .codeStyle {
-    padding: 0;
+    overflow: auto;
+  }
+
+  .emptyCodeBlock {
+    padding: 16px;
+    background-color: #161b22;
+    height: 200px;
   }
 }
 
