@@ -12,7 +12,6 @@ const SyntaxHighlight: object = {
     className: string;
     children: string[];
   }) {
-    console.log(children);
     const match = /language-(\w+)/.exec(className || "");
     return !inline && match ? (
       <SyntaxHighlighter
