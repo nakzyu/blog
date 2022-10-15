@@ -24,7 +24,7 @@ const Header = ({ route }: HeaderProps) => {
 
   return (
     <header className="flex h-full  items-center justify-between mx-4 lg:mx-0 ">
-      <Link href="/" passHref>
+      <Link href="https://blog.nakzyu.ch/" passHref>
         <a className="flex bg-white items-center">
           <img
             src="/images/logo.png"
