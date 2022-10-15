@@ -1,6 +1,6 @@
 ---
 title: 차낙주 블로그
-publishedDate: "2022-02-15 22:51:00"
+publishedDate: "1994-07-16 00:00:00"
 tag: ETC
 thumbnail: cat.gif
 ---
