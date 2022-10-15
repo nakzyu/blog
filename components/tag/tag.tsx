@@ -23,6 +23,10 @@ const TagColors = {
     text: "white",
     background: "rgb(239,63,32)",
   },
+  Javascript: {
+    text: "black",
+    background: "#ecdb54",
+  },
 };
 
 const Tag = ({ text, count, isSelected }: TagProps) => {
