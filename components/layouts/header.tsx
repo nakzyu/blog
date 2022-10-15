@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const genLink = (route: string, text: string, isActive: boolean) => {
   const classes = isActive
-    ? "cursor-pointer ml-2 px-2 py-1 text-black bg-white"
+    ? "cursor-pointer ml-2 px-2 py-1 text-black font-bold bg-white"
     : "cursor-pointer ml-2 px-2 py-1";
 
   return (
