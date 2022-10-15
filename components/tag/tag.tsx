@@ -21,7 +21,7 @@ const TagColors = {
   },
   ETC: {
     text: "white",
-    background: "purple",
+    background: "rgb(239,63,32)",
   },
 };
 
