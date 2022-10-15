@@ -1,9 +1,8 @@
 import fs, { readFileSync } from "fs";
 import path from "path";
-import { Post } from "../types/post";
 import matter from "gray-matter";
-import { TagFreq } from "../types/tagFreq";
 import { toDate } from "./dateHandler";
+import { Post, TagFreq, TagTypes } from "../types";
 
 const root = process.cwd();
 const postsDir = path.join(root + "/posts/");
@@ -34,14 +33,18 @@ export const getAllPathsOfTags = () => {
 };
 
 export const getAllTagsAndFreqs = (): TagFreq[] =>
-  Object.entries(
-    getAllPosts().reduce((a, b) => {
-      if (!a[b.data.tag]) {
-        a[b.data.tag] = 0;
-      }
-      a[b.data.tag] += 1;
-      return a;
-    }, {} as Record<string, number>)
+  (
+    Object.entries(
+      getAllPosts().reduce((a, b) => {
+        const tag = b.data.tag;
+
+        if (!a[tag]) {
+          a[tag] = 0;
+        }
+        a[tag] += 1;
+        return a;
+      }, {} as Record<TagTypes, number>)
+    ) as [TagTypes, number][]
   ).map(([text, count]) => ({ text, count }));
 
 export const getAllPathsOfPosts = () =>
