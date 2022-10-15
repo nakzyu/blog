@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import Link from "next/link";
 
-type TagTypes = "React" | "All";
+type TagTypes = "React" | "All" | "ETC";
 
 type TagProps = {
   text: TagTypes;
@@ -16,8 +16,12 @@ const TagColors = {
     background: "#282c34",
   },
   All: {
+    text: "black",
+    background: "white",
+  },
+  ETC: {
     text: "white",
-    background: "black",
+    background: "purple",
   },
 };
 
