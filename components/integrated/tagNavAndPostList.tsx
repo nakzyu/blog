@@ -1,5 +1,4 @@
-import { Post } from "../../types/post";
-import { TagFreq } from "../../types/tagFreq";
+import { TagFreq, Post } from "../../types";
 import Paginator, { PaginatorProps } from "../layouts/paginator";
 import PostList from "../post/postList";
 import TagNavBar from "../tag/tagNavBar";

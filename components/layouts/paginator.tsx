@@ -67,7 +67,7 @@ export default function Paginator({
     const page = direction === "이전" ? remnants - 9 : remnants + 11;
     return (
       <GenLink key={direction} page={page} tag={tag}>
-        <li className='cursor-pointer px-1 text-m'>{direction}</li>
+        <li className="cursor-pointer px-1 text-m">{direction}</li>
       </GenLink>
     );
   };
@@ -86,7 +86,7 @@ export default function Paginator({
   };
 
   return (
-    <ul className='flex justify-center items-center mt-16 mb-4'>
+    <ul className="flex justify-center items-center mt-16 mb-4">
       {renderItems()}
     </ul>
   );

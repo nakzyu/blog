@@ -1,10 +1,18 @@
 import Link from "next/link";
+import { TagTypes } from "../../types";
 
 type TagProps = {
-  text: string;
+  text: TagTypes;
   isSelected: boolean;
   isVertical: boolean;
   count?: number;
+};
+
+const TagColors = {
+  React: {
+    text: "#61dafb",
+    background: "#282c34",
+  },
 };
 
 const Tag = ({ text, count, isSelected }: TagProps) => {

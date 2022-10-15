@@ -1,5 +1,4 @@
-import { Post } from "../../types/post";
-
+import { Post } from "../../types";
 import Tag from "../tag/tag";
 import TimeToolTip from "./timeToolTip";
 

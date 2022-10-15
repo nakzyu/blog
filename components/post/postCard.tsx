@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { PostMetadata } from "../../types/post";
+import { PostMetadata } from "../../types";
 import Tag from "../tag/tag";
 import TimeToolTip from "./timeToolTip";
 

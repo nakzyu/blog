@@ -17,15 +17,15 @@ const SyntaxHighlight: object = {
       <SyntaxHighlighter
         style={theme}
         language={match[1]}
-        PreTag='div'
-        className='codeStyle'
+        PreTag="div"
+        className="codeStyle"
         showLineNumbers={true}
         {...props}
       >
         {children[0].slice(0, children[0].length - 1)}
       </SyntaxHighlighter>
     ) : (
-      <code className='emptyCodeBlock' {...props}>
+      <code className="emptyCodeBlock" {...props}>
         {children[0].slice(0, children[0].length)}
       </code>
     );
