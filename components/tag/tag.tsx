@@ -16,8 +16,8 @@ const TagColors = {
     background: "#282c34",
   },
   All: {
-    text: "white",
-    background: "black",
+    text: "black",
+    background: "white",
   },
 };
 

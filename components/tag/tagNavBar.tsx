@@ -36,7 +36,9 @@ const TagNavBar = ({ tags, currentTag }: TagNavBarProps) => {
             <div>
               <div className="text-xl my-1 md:text-2xl md:my-3">Tags</div>
               <div className="w-16 h-0.5" />
-              <ul className="list-none flex-col mt-3">{makeTags(false)}</ul>
+              <ul className="list-none flex flex-wrap mt-3">
+                {makeTags(false)}
+              </ul>
             </div>
           </div>
         </div>
