@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const genLink = (route: string, text: string, isActive: boolean) => {
   const classes = isActive
-    ? "cursor-pointer ml-2 px-2 py-1 text-black bg-white rounded-sm"
+    ? "cursor-pointer ml-2 px-2 py-1 text-black bg-white"
     : "cursor-pointer ml-2 px-2 py-1";
 
   return (
@@ -23,15 +23,17 @@ const Header = ({ route }: HeaderProps) => {
   const match = (r: string) => (routeMaps[r] ? true : false);
 
   return (
-    <header className="flex h-full items-center justify-between mx-4 lg:mx-0 ">
-      <Link href="https://blog.nakzyu.ch" passHref>
-        <a className="flex items-center">
+    <header className="flex h-full  items-center justify-between mx-4 lg:mx-0 ">
+      <Link href="/" passHref>
+        <a className="flex bg-white items-center">
           <img
             src="/images/logo.png"
-            className="w-7 h-7 rounded-full mr-1"
+            className="w-7 h-7 rounded-full mr-1 ml-1"
             alt="logo"
           />
-          <div className="cursor-pointer">blog.nakzyu.ch</div>
+          <div className=" text-black p-1 font-bold e cursor-pointer">
+            blog.nakzyu.ch
+          </div>
         </a>
       </Link>
 
