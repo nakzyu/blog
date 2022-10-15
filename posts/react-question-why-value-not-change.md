@@ -1,8 +1,8 @@
 ---
-title: React 사용시 흔한 실수 - 왜 값이 안바뀌지?
-description: React 사용시 흔한 실수 - 왜 값이 안바뀌지?
+title: React 사용시 흔한 실수 왜 값이 안바뀌지
+description: React 사용시 흔한 실수 왜 값이 안바뀌지
 publishedDate: "2022-10-15 00:00:00"
-tag: React
+tag: react
 ---
 
 리액트에 입문하는 99%의 사람들은, 장담컨대 아래와 같은 현상에 당혹스러움을 느꼈을 것 이다.
