@@ -1,6 +1,5 @@
 ---
 title: React 사용시 흔한 실수 - 화면의 값이 바뀌지 않는 이유
-description: React 사용시 흔한 실수 - 화면의 값이 바뀌지 않는 이유
 publishedDate: "2022-10-15 00:00:00"
 tag: React
 ---
