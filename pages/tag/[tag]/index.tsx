@@ -1,15 +1,14 @@
 import { GetStaticPaths, GetStaticPropsContext } from "next";
-import { Post } from "../../../types/post";
 import {
   getAllPostsByTag,
   getAllPathsOfTags,
   getAllTagsAndFreqs,
 } from "../../../utils/postHandler";
-import { TagFreq } from "../../../types/tagFreq";
 import TagNavAndPostList from "../../../components/integrated/tagNavAndPostList";
 import { ITEMS_PER_PAGE } from "../../../constants";
 import { useRouter } from "next/router";
 import { clacPageInfo } from "../../../utils/clacCurrentPage";
+import { Post, TagFreq } from "../../../types";
 
 type PostsByTagPageProps = {
   posts: Post[];
