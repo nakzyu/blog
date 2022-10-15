@@ -25,7 +25,14 @@ const Header = ({ route }: HeaderProps) => {
   return (
     <header className="flex h-full items-center justify-between mx-4 lg:mx-0 ">
       <Link href="/" passHref>
-        <div className="cursor-pointer">blog.nakzyu.ch</div>
+        <a className="flex items-center">
+          <img
+            src="/images/logo.png"
+            className="w-7 h-7 rounded-full mr-1"
+            alt="logo"
+          />
+          <div className="cursor-pointer">blog.nakzyu.ch</div>
+        </a>
       </Link>
 
       <div className="flex justify-between items-center">
