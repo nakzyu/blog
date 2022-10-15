@@ -2,7 +2,7 @@ import { GetStaticPropsContext } from "next";
 import Comments from "../../components/layouts/comments";
 import PostBody from "../../components/post/postBody";
 import PostHead from "../../components/post/postHead";
-import { Post } from "../../types/post";
+import { Post } from "../../types";
 import SetHead from "../../utils/ApplyHead";
 import { getAllPathsOfPosts, getPost } from "../../utils/postHandler";
 
@@ -13,7 +13,6 @@ const PostPage = ({ post }: PostPageProps) => {
   const headOptions = {
     "og:title": post.data.title,
     "og:image": `/images/${post.data.thumbnail || "profile.jpg"}`,
-    "og:description": post.data.description,
   };
 
   return (

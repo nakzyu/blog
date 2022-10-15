@@ -1,4 +1,4 @@
-import { PostMetadata } from "../../types/post";
+import { PostMetadata } from "../../types";
 
 type PostHistoryProps = {
   data: PostMetadata;
@@ -6,7 +6,7 @@ type PostHistoryProps = {
 
 const PostHistory = ({ data }: PostHistoryProps) => {
   return (
-    <div className='flex'>
+    <div className="flex">
       <p>{data.publishedDate}</p>
       <p>{data.tag}</p>
       <p>{data.title}</p>

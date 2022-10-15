@@ -9,7 +9,7 @@ import SyntaxHighlight from "./syntaxHighlight";
 const MarkdownRenderer = ({ content }: { content: string }) => {
   return (
     <ReactMarkdown
-      className='markdown-body mt-10 md:mt-12 min-h-[25vh] text-[#c9d1d9] '
+      className="markdown-body mt-10 md:mt-12 min-h-[25vh] text-[#c9d1d9] "
       remarkPlugins={[remarkMath, gfm]}
       rehypePlugins={[rehypeKatex]}
       components={SyntaxHighlight}
