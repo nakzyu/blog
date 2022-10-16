@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://blog.nakzyu.ch
+
+# Sitemaps
+Sitemap: https://blog.nakzyu.ch/sitemap.xml
