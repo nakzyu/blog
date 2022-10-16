@@ -30,7 +30,7 @@ const TagNavBar = ({ tags, currentTag }: TagNavBarProps) => {
 
   return (
     <>
-      <div className="relatvie invisible xl:visible">
+      <div className="relatvie hidden xl:inline">
         <div className="relative -left-64">
           <div className="absolute">
             <div>
@@ -43,12 +43,14 @@ const TagNavBar = ({ tags, currentTag }: TagNavBarProps) => {
           </div>
         </div>
       </div>
-      <div className="visible none my-3 xl:hidden">
+      <div className="none my-3 xl:hidden">
         <div>
           <p className="my-2 text-xl">Tags</p>
           <div className="w-16 h-0.5" />
         </div>
-        <ul className="mt-3 flex list-none">{makeTags(true)}</ul>
+        <ul className="mt-3 max-w-full  inline-flex list-none  overflow mobile:overflow-x-scroll">
+          {makeTags(true)}
+        </ul>
         <div className="bg-neutral-200 h-0.5 mt-3" />
       </div>
     </>

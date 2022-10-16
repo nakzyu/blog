@@ -32,9 +32,9 @@ const TagColors = {
 const Tag = ({ text, count, isSelected }: TagProps) => {
   return (
     <Link href={text === "All" ? "/" : `/tag/${text}`} passHref>
-      <p
+      <div
         className={classNames(
-          "cursor-pointer p-[8px] font-bold text-m mt-0.5 rounded-[3px] mb-1 mr-2 text-neutral-400  flex  hover:opacity-50 duration-200",
+          "cursor-pointer p-[8px] whitespace-nowrap font-bold text-m mt-0.5 flex rounded-[3px] mb-1 mr-2 text-neutral-400  hover:opacity-50 duration-200 break-no",
           isSelected && "opacity-50"
         )}
         style={{
@@ -43,7 +43,7 @@ const Tag = ({ text, count, isSelected }: TagProps) => {
         }}
       >
         {text} {count ? `(${count})` : ""}
-      </p>
+      </div>
     </Link>
   );
 };
