@@ -36,6 +36,7 @@ interface PostPageStaticProps extends GetStaticPropsContext {
 
 export const getStaticProps = ({ params }: PostPageStaticProps) => {
   const post = getPost(params.post);
+
   return { props: { post } };
 };
 

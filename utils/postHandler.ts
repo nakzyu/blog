@@ -10,12 +10,15 @@ const postsDir = path.join(root + "/posts/");
 export const getAllPosts = (): Post[] =>
   fs
     .readdirSync(postsDir)
-    .map((fileName) => matter(readFileSync(postsDir + fileName, "utf-8")))
+    .map((fileName) => ({
+      ...matter(readFileSync(postsDir + fileName, "utf-8")),
+      fileName,
+    }))
     .map(
       (post) =>
         ({
           content: post.content,
-          data: post.data,
+          data: { ...post.data, fileName: post.fileName.split(".md").join("") },
         } as Post)
     )
     .sort(
@@ -49,11 +52,11 @@ export const getAllTagsAndFreqs = (): TagFreq[] =>
 
 export const getAllPathsOfPosts = () =>
   getAllPosts().map(({ data }) => ({
-    params: { post: data.title },
+    params: { post: data.fileName },
   }));
 
 export const getAllPostsByTag = (tag: string) =>
   getAllPosts().filter(({ data }) => data.tag === tag);
 
-export const getPost = (title: string) =>
-  getAllPosts().find(({ data }) => title === data.title);
+export const getPost = (fileName: string) =>
+  getAllPosts().find(({ data }) => fileName === data.fileName);
