@@ -31,7 +31,7 @@ const TagColors = {
 
 const Tag = ({ text, count, isSelected }: TagProps) => {
   return (
-    <Link href={text === "All" ? "/" : `/tag/${text}`} passHref>
+    <Link href={text === "All" ? "/" : `/tag/${text.toLowerCase()}`} passHref>
       <div
         className={classNames(
           "cursor-pointer p-[8px] whitespace-nowrap font-bold text-m mt-0.5 flex rounded-[3px] mb-1 mr-2 text-neutral-400  hover:opacity-50 duration-200 transition-opacity break-no",
