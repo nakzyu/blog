@@ -29,7 +29,7 @@ export const getAllPathsOfTags = () => {
   const tagSet = new Set<string>();
   getAllPosts().forEach((post) => tagSet.add(post.data.tag));
   const tagPaths = Array.from(tagSet).map((tag) => ({
-    params: { tag },
+    params: { tag: tag.toLocaleLowerCase() },
   }));
 
   return tagPaths;
@@ -56,7 +56,7 @@ export const getAllPathsOfPosts = () =>
   }));
 
 export const getAllPostsByTag = (tag: string) =>
-  getAllPosts().filter(({ data }) => data.tag === tag);
+  getAllPosts().filter(({ data }) => data.tag.toLocaleLowerCase() === tag);
 
 export const getPost = (fileName: string) =>
   getAllPosts().find(({ data }) => fileName === data.fileName);
