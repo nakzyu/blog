@@ -25,15 +25,13 @@ const Header = ({ route }: HeaderProps) => {
   return (
     <header className="flex h-full  items-center justify-between mx-4 lg:mx-0 ">
       <Link href="/" passHref>
-        <a className="flex bg-white items-center">
+        <a className="flex items-center">
           <img
             src="/images/logo.png"
             className="w-7 h-7 rounded-full mr-1 ml-1"
             alt="logo"
           />
-          <div className=" text-black p-1 font-bold e cursor-pointer">
-            blog.nakzyu.ch
-          </div>
+          <div className="p-1 font-bold e cursor-pointer">blog.nakzyu.ch</div>
         </a>
       </Link>
 

@@ -9,7 +9,7 @@ type PostCardProps = {
 
 const PostCard = ({ data }: PostCardProps) => {
   return (
-    <div className="mt-4 md:mt-6">
+    <div className="mb-8">
       {data.thumbnail && (
         <Link href={`/${data.fileName}`} passHref>
           <img
@@ -20,7 +20,7 @@ const PostCard = ({ data }: PostCardProps) => {
         </Link>
       )}
       <Link href={`/${data.fileName}`} passHref>
-        <h2 className="cursor-pointer text-xl my-1 md:text-2xl md:my-3">
+        <h2 className="cursor-pointer text-xl my-4 md:text-2xl">
           {data.title}
         </h2>
       </Link>

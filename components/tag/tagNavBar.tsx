@@ -32,18 +32,18 @@ const TagNavBar = ({ tags, currentTag }: TagNavBarProps) => {
     <>
       <div className="relatvie hidden xl:inline">
         <div className="relative -left-64">
-          <div className="absolute">
+          <div className="absolute mt-8">
             <div>
-              <div className="text-xl my-1 md:text-2xl md:my-3">Tags</div>
+              <div className="text-xl my-4 md:text-2xl">Tags</div>
               <div className="w-16 h-0.5" />
-              <ul className="list-none max-w-[205px] flex flex-wrap mt-3">
+              <ul className="list-none max-w-[205px] flex flex-wrap">
                 {makeTags(false)}
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div className="none my-3 xl:hidden">
+      <div className="none mt-4 xl:hidden">
         <div>
           <p className="my-2 text-xl">Tags</p>
           <div className="w-16 h-0.5" />
