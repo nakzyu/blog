@@ -1,32 +1,13 @@
 import classNames from "classnames";
 import Link from "next/link";
-
-type TagTypes = "React" | "All" | "ETC";
+import { TagColors } from "../../constants";
+import { TagTypes } from "../../types";
 
 type TagProps = {
   text: TagTypes;
   isSelected: boolean;
   isVertical: boolean;
   count?: number;
-};
-
-const TagColors = {
-  React: {
-    text: "#61dafb",
-    background: "#282c34",
-  },
-  All: {
-    text: "black",
-    background: "white",
-  },
-  ETC: {
-    text: "white",
-    background: "rgb(239,63,32)",
-  },
-  Javascript: {
-    text: "black",
-    background: "#ecdb54",
-  },
 };
 
 const Tag = ({ text, count, isSelected }: TagProps) => {
