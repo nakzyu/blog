@@ -15,7 +15,7 @@ const Tag = ({ text, count, isSelected }: TagProps) => {
     <Link href={text === "All" ? "/" : `/tag/${text.toLowerCase()}`} passHref>
       <div
         className={classNames(
-          "cursor-pointer py-[8px] px-[12px] whitespace-nowrap font-bold text-m mt-0.5 flex rounded-[8px] mb-1 mr-2 text-neutral-400  hover:opacity-50 duration-200 transition-opacity break-no",
+          "cursor-pointer py-[8px] px-[12px] whitespace-nowrap font-bold text-m flex rounded-[8px] my-1 mr-2 text-neutral-400  hover:opacity-50 duration-200 transition-opacity break-no",
           isSelected && "opacity-50"
         )}
         style={{

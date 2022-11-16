@@ -35,7 +35,7 @@ const TagNavBar = ({ tags, currentTag }: TagNavBarProps) => {
           <div className="absolute mt-8">
             <div>
               <div className="text-xl my-4 md:text-2xl">Tags</div>
-              <div className="w-16 h-0.5" />
+
               <ul className="list-none max-w-[205px] flex flex-wrap">
                 {makeTags(false)}
               </ul>
@@ -46,12 +46,11 @@ const TagNavBar = ({ tags, currentTag }: TagNavBarProps) => {
       <div className="none mt-4 xl:hidden">
         <div>
           <p className="my-2 text-xl">Tags</p>
-          <div className="w-16 h-0.5" />
         </div>
         <ul className="mt-3 max-w-full  inline-flex list-none  overflow mobile:overflow-x-scroll">
           {makeTags(true)}
         </ul>
-        <div className="bg-neutral-200 h-0.5 mt-3" />
+        <div className="bg-neutral-200 h-0.5 mt-1" />
       </div>
     </>
   );
