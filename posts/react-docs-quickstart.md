@@ -4,7 +4,7 @@ publishedDate: "2022-11-16 21:45:00"
 tag: React
 ---
 
-React Docs Beta > Quickstart > Thinking in React 를 읽고 재구성한 글입니다
+(React Docs Beta > Quickstart > Thinking in React 를 읽고 재구성한 글 입니다.)
 
 ### `state`를 언제 사용해야 하는가?
 
