@@ -1,14 +1,10 @@
 ---
-title: React State 사용 - 언제 사용해야 할까?
+title: React State - 사용하지 말아야 하는 경우
 publishedDate: "2022-11-16 21:45:00"
 tag: React
 ---
 
 (React Docs Beta > Quickstart > Thinking in React 를 읽고 재구성한 글 입니다.)
-
-## `state`를 언제 사용해야 하는가?
-
-`state`를 선언하기 전에, 혹시 사용하지 말아야 하는 케이스가 아닌가? 부터 생각해보자. (아래 케이스에 해당하지 않으면 사용해도 된다.)
 
 ## `state`를 사용하지 말아야 하는 경우
 
