@@ -14,7 +14,7 @@ const PostCard = ({ data }: PostCardProps) => {
         <Link href={`/${data.fileName}`} passHref>
           <img
             className="cursor-pointer object-cover w-full h-64 md:h-96 "
-            src={`/images/${data.thumbnail || "profile.jpg"}`}
+            src={`/images/${data.thumbnail || "logo.png"}`}
             alt="image"
           />
         </Link>

@@ -30,7 +30,7 @@ const PostsByTagPage = ({ posts, tags }: PostsByTagPageProps) => {
 
   const headOptions = {
     "og:title": categoryPageTitle,
-    "og:image": `/images/profile.jpg`,
+    "og:image": `/images/logo.png`,
   };
 
   return (
