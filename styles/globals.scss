@@ -820,11 +820,10 @@ body::-webkit-scrollbar-thumb {
 
 .markdown-body code,
 .markdown-body tt {
-  padding: 0.2em 0.4em;
+  padding: 0.2em 0.2em;
   margin: 0;
   font-size: 85%;
   background-color: rgba(110, 118, 129, 0.4);
-  border-radius: 6px;
 }
 
 .markdown-body code br,
@@ -862,7 +861,6 @@ body::-webkit-scrollbar-thumb {
 .markdown-body pre {
   font-size: 85%;
   line-height: 1.45;
-  border-radius: 6px;
 
   .codeStyle {
     overflow: auto;
@@ -939,7 +937,6 @@ body::-webkit-scrollbar-thumb {
   pointer-events: none;
   content: "";
   border: 2px solid #1f6feb;
-  border-radius: 6px;
 }
 
 .markdown-body .footnotes li:target {
