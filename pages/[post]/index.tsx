@@ -12,7 +12,7 @@ type PostPageProps = {
 const PostPage = ({ post }: PostPageProps) => {
   const headOptions = {
     "og:title": post.data.title,
-    "og:image": `/images/${post.data.thumbnail || "profile.jpg"}`,
+    "og:image": `/images/${post.data.thumbnail || "logo.png"}`,
   };
 
   return (
