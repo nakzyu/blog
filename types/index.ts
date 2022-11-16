@@ -1,4 +1,4 @@
-export type TagTypes = "React" | "All";
+import { TagColors } from "../constants";
 
 export type Post = {
   data: PostMetadata;
@@ -16,3 +16,5 @@ export type TagFreq = {
   text: TagTypes;
   count: number;
 };
+
+export type TagTypes = keyof typeof TagColors;

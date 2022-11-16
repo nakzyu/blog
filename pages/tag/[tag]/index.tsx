@@ -9,6 +9,7 @@ import { ITEMS_PER_PAGE } from "../../../constants";
 import { useRouter } from "next/router";
 import { clacPageInfo } from "../../../utils/clacCurrentPage";
 import { Post, TagFreq } from "../../../types";
+import SetHead from "../../../utils/ApplyHead";
 
 type PostsByTagPageProps = {
   posts: Post[];
@@ -25,18 +26,28 @@ const PostsByTagPage = ({ posts, tags }: PostsByTagPageProps) => {
 
   const tag = posts[0].data.tag;
 
+  const categoryPageTitle = "blog.nakzyu.ch" + " - " + tag;
+
+  const headOptions = {
+    "og:title": categoryPageTitle,
+    "og:image": `/images/profile.jpg`,
+  };
+
   return (
-    <TagNavAndPostList
-      tags={tags}
-      currentTag={tag}
-      posts={posts.slice(startIndex, endIndex)}
-      paginatorProps={{
-        currnetPage,
-        itemsPerPage: ITEMS_PER_PAGE,
-        length: posts.length,
-        tag,
-      }}
-    />
+    <>
+      <SetHead title={categoryPageTitle} options={headOptions} />
+      <TagNavAndPostList
+        tags={tags}
+        currentTag={tag}
+        posts={posts.slice(startIndex, endIndex)}
+        paginatorProps={{
+          currnetPage,
+          itemsPerPage: ITEMS_PER_PAGE,
+          length: posts.length,
+          tag,
+        }}
+      />
+    </>
   );
 };
 
