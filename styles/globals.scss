@@ -7,6 +7,14 @@ body {
   color: #efefef;
 }
 
+li {
+  line-height: 150%;
+}
+
+p {
+  line-height: 150%;
+}
+
 body::-webkit-scrollbar {
   background-color: #101010;
 }
@@ -821,8 +829,8 @@ body::-webkit-scrollbar-thumb {
 .markdown-body code,
 .markdown-body tt {
   padding: 0.2em 0.2em;
-  margin: 0;
   font-size: 85%;
+  border-radius: 2px;
   background-color: rgba(110, 118, 129, 0.4);
 }
 
