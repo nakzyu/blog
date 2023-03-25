@@ -26,7 +26,7 @@ const PostsByTagPage = ({ posts, tags }: PostsByTagPageProps) => {
 
   const tag = posts[0].data.tag;
 
-  const categoryPageTitle = "blog.nakzyu.ch" + " - " + tag;
+  const categoryPageTitle = "blog.nakzyu.com" + " - " + tag;
 
   const headOptions = {
     "og:title": categoryPageTitle,
