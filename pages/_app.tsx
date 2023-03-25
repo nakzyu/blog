@@ -12,13 +12,13 @@ function MyApp({ Component, pageProps }: AppProps) {
   const route = router.route.split("/")[1];
 
   const headOptions = {
-    "og:title": "blog.nakzyu.ch",
+    "og:title": "blog.nakzyu.com",
     "og:url": PUBLIC_URL,
   };
 
   return (
     <>
-      <SetHead title="blog.nakzyu.ch" options={headOptions} />
+      <SetHead title="blog.nakzyu.com" options={headOptions} />
       <div className="flex-col">
         <div className="w-full bg-[#181818] text-white border-b-neutral-200">
           <div className="max-w-4xl m-auto h-16 lg:max-h-28">
