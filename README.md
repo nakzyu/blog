@@ -1,13 +1,13 @@
-routes
+## Routes
 
-### 포스트 관련
+### Post Related
 
-- / - 존재하는 모든 포스트를 표시
+- / - display all posts
 
-- /:post - 포스트 1개를 볼수있는 페이지
+- /:post - display each post (by title)
 
-- /tag/:tag - 해당 태그를 포함한 모든 포스트를 보여주는 페이지
+- /tag/:tag - display all posts contains certain tag
 
-### 개인 이력관련
+### Personal Career
 
 - /about - about me
